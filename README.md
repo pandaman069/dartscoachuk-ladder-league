@@ -1,38 +1,19 @@
-# DartsCoachUK Official Ladder League — live multiplayer test
+# DartsCoachUK Official Ladder League
 
-This release uses Supabase for real accounts and shared league state. Players
-on different devices see the same registrations, ladder, challenges, matches,
-scores and notifications. Refreshing or logging out does not erase data.
+Complete prototype-design frontend connected to the existing Supabase multiplayer project and deployed through GitHub to Netlify.
 
-No payment provider is connected. All balances are test credits adjusted by
-the full organiser.
+This is a GitHub-only replacement. Follow `GITHUB_ONLY_INSTALL.md`. Do not change the Supabase project, run a database reset, recreate the organiser, or replace the Netlify environment variables.
 
-Start with `CLEAN_INSTALL_GUIDE.md`, then use `LIVE_TEST_CHECKLIST.md` before
-inviting a larger testing group.
+The application opens in a pre-season state when no league exists. Players may create accounts immediately; joining a season remains a separate action that appears when the organiser publishes one.
 
-## Included live workflows
+Included areas cover the player dashboard, ladder, normal challenges, Power Play, match arrangement, match lobby, scoring and statistics, venues and attendance, notifications, settings, organiser queues, players, season/division setup, permissions and audit history.
 
-- Email/password signup, confirmation, login, logout and password recovery.
-- Server-created player profiles with unique usernames.
-- One dedicated full organiser account with no credentials displayed in-app.
-- Scheduled season registration using organiser-issued test credits.
-- Automatic season start, recommended balanced divisions and seven-day
-  postponement when too few eligible players are ready.
-- Normal challenge range and weekly allowance enforcement.
-- Power Play opening/closing windows, countdown and automatic restoration after
-  refusal or cancellation.
-- Challenge acceptance, refusal, cancellation and match arrangement.
-- Shared best-of-seven scoring, double attempts, confirmation and ladder
-  movement.
-- Realtime ladder, match, challenge and in-app notification updates.
-- Approved venue register and player venue proposals.
-- Full-admin test-credit adjustments and permanent player deletion.
-- Row Level Security and protected database functions.
+## Local verification
 
-## Deliberate test exclusions
+```text
+npm ci
+npx tsc --noEmit
+npm run build:netlify
+```
 
-- No card payments, withdrawals or real-money refunds.
-- Email and SMS league notifications require separate delivery providers;
-  in-app notifications are fully shared and persistent.
-- GPS check-in, guest referee access and production identity verification are
-  not enabled in this closed-test release.
+No real payment provider is included. Balances are test credit for live testing.
