@@ -1,7 +1,0 @@
-[build]
-  command = "npm run build:netlify"
-
-[build.environment]
-  NODE_VERSION = "22"
-  NETLIFY_NEXT_SKEW_PROTECTION = "true"
-
